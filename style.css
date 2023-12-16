@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    /* this hides all unnecessary space side and dowm */
+    overflow: hidden;
+}
+
+.sky {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-image: url('/images/background.jpg');
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+}
+
+.trees {
+    height: 100vh;
+    width: 100%;
+    background-image: url('/images/trees.png');
+    background-size: cover;
+    position: absolute;
+    top: -228px;
+
+}
+
+.track {
+    height: 44vh;
+    /* width have been increse so large to make the track continuous  */
+    width: 800vw;
+    position: absolute;
+    background-image: url('images/track.png');
+    background-repeat: repeat-x;
+    /* background-size: cover; */
+    /* to bring the track down the absolute is used and the below top is used.  */
+    top: 70vh;
+
+    animation: carMove linear 10s infinite;
+}
+
+.car {
+    /* margin: 120px; */
+    height: 100px;
+    width: 380px;
+    background-image: url('images/car_body.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 350px;
+    bottom: 250px;
+    animation: shake linear 1s infinite;
+}
+
+.wheel1 img {
+    width: 77px;
+    position: relative;
+    top: 44px;
+    left: 43px;
+    animation: wheelRotation linear 0.2s infinite;
+}
+
+.wheel2 img {
+    width: 77px;
+    position: relative;
+    top: -38px;
+    left: 234px;
+    animation: wheelRotation linear 0.2s infinite;
+
+}
+
+@keyframes wheelRotation {
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes carMove {
+    100% {
+        /* to move the track in the reverse way the value of the translateX is taken negative.  */
+        transform: translateX(-500vw);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateY(-5px);
+        /* moves the car in the Y-axis by -5px up */
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
+
+}
